@@ -1,0 +1,499 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-3 col-xl-3">
+                <div id="list-example" class="list-group" >
+                        <a class="list-group-item list-group-item-action bg-dark text-white disabled" >Todos os Gêneros</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-1">Autoajuda</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-2">Aventura</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-3">Biografia</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-4">Comédia</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-5">Crônica</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-6">Didático</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-7">Drama</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-8">Fantasia</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-9">Ficção Científica‎</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-10">Quadrinhos (HQ)</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-11">Sátira</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-12">Sobrenatural </a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-13">Religião</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-14">Romance</a>
+                        <a class="list-group-item list-group-item-action" href="/livros#list-item-15">Terror</a>
+                        <a class="list-group-item list-group-item-action bg-dark text-white disabled" ></a>
+
+                      </div>
+        </div>
+
+        <div class="col-12 col-lg-9 col-xl-9 justisfy-content-center">
+                <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+              
+              <!-- Categoria Autoajuda  -->
+              <div class="row" id="list-item-1">
+                  <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                    
+                      <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Autoajuda : </div>
+                        <div class="card-columns">
+                          <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let autoajuda of generoAutoajuda">
+                              <div class="row no-gutters">
+                                  <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                      <img src="{{ autoajuda.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                                  </div>
+      
+                                  <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                      <div class="card-body">
+                                        <h5 class="card-title h5">{{ autoajuda.title }}</h5>
+                                        <p class="card-text  my-0 ">Autor: {{ autoajuda.author | transformCamelCase }}</p>
+                                        <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ autoajuda.category | transformCamelCase }} </small></p>
+                                        <p class="card-text"><small class="text-muted">Data de Publicação: {{ autoajuda.date }} </small></p>
+                                        <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                          <a target="_blank" href="{{ autoajuda.read }}" class="text-dark">Ler Online</a>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-warning mb-2">
+                                          <a target="_blank" href="{{ autoajuda.pdf }}" class="text-dark"> Download</a>
+                                        </button>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+          <!-- Categoria Aventura  -->
+          <div class="row" id="list-item-2">
+            <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Aventura : </div>
+                  <div class="card-columns">
+                    <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let aventura of generoAventura">
+                        <div class="row no-gutters">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                <img src="{{ aventura.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                <div class="card-body">
+                                  <h5 class="card-title h5">{{ aventura.title }}</h5>
+                                  <p class="card-text  my-0 ">Autor: {{ aventura.author | transformCamelCase }}</p>
+                                  <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ aventura.category | transformCamelCase }}. </small></p>
+                                  <p class="card-text"><small class="text-muted">Data de Publicação: {{ aventura.date }} </small></p>
+                                  <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                    <a target="_blank" href="{{ aventura.read }}" class="text-dark">Ler Online</a>
+                                  </button>
+                                  <button type="button" class="btn btn-outline-warning mb-2">
+                                    <a target="_blank" href="{{ aventura.pdf }}" class="text-dark"> Download</a>
+                                  </button>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Categoria Biografia -->
+          <div class="row" id="list-item-3">
+              <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                  <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Biografia : </div>
+                    <div class="card-columns">
+                      <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let biografia of generoBiografia">
+                          <div class="row no-gutters">
+                              <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                  <img src="{{ biografia.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                              </div>
+  
+                              <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                  <div class="card-body">
+                                    <h5 class="card-title h5">{{ biografia.title }}</h5>
+                                    <p class="card-text  my-0 ">Autor: {{ biografia.author | transformCamelCase }}</p>
+                                    <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ biografia.category | transformCamelCase }}. </small></p>
+                                    <p class="card-text"><small class="text-muted">Data de Publicação: {{ biografia.date }} </small></p>
+                                    <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                      <a target="_blank" href="{{ biografia.read }}" class="text-dark">Ler Online</a>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-warning mb-2">
+                                      <a target="_blank" href="{{ biografia.pdf }}" class="text-dark"> Download</a>
+                                    </button>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catgoria Comédia -->
+            <div class="row" id="list-item-4">
+                <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                    <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Comédia : </div>
+                      <div class="card-columns">
+                        <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let comedia of generoComedia">
+                            <div class="row no-gutters">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                    <img src="{{ comedia.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                                </div>
+    
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                    <div class="card-body">
+                                      <h5 class="card-title h5">{{ comedia.title }}</h5>
+                                      <p class="card-text  my-0 ">Autor: {{ comedia.author | transformCamelCase }}</p>
+                                      <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ comedia.category | transformCamelCase }}. </small></p>
+                                      <p class="card-text"><small class="text-muted">Data de Publicação: {{ comedia.date }} </small></p>
+                                      <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                        <a target="_blank" href="{{ comedia.read }}" class="text-dark">Ler Online</a>
+                                      </button>
+                                      <button type="button" class="btn btn-outline-warning mb-2">
+                                        <a target="_blank" href="{{ comedia.pdf }}" class="text-dark"> Download</a>
+                                      </button>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Categoria Crônica -->
+              <div class="row" id="list-item-5">
+                  <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                      <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Crônica : </div>
+                        <div class="card-columns">
+                          <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let cronica of generoCronica">
+                              <div class="row no-gutters">
+                                  <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                      <img src="{{ cronica.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                                  </div>
+      
+                                  <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                      <div class="card-body">
+                                        <h5 class="card-title h5">{{ cronica.title }}</h5>
+                                        <p class="card-text  my-0 ">Autor: {{ cronica.author | transformCamelCase }}</p>
+                                        <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ cronica.category | transformCamelCase }}. </small></p>
+                                        <p class="card-text"><small class="text-muted">Data de Publicação: {{ cronica.date }} </small></p>
+                                        <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                          <a target="_blank" href="{{ cronica.read }}" class="text-dark">Ler Online</a>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-warning mb-2">
+                                          <a target="_blank" href="{{ cronica.pdf }}" class="text-dark"> Download</a>
+                                        </button>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+          <!-- Categoria Didático -->
+          <div class="row" id="list-item-6">
+              <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                  <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Didático : </div>
+                    <div class="card-columns">
+                      <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let didatico of generoDidatico">
+                          <div class="row no-gutters">
+                              <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                  <img src="{{ didatico.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                              </div>
+  
+                              <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                  <div class="card-body">
+                                    <h5 class="card-title h5">{{ didatico.title }}</h5>
+                                    <p class="card-text  my-0 ">Autor: {{ didatico.author | transformCamelCase }}</p>
+                                    <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ didatico.category | transformCamelCase }}. </small></p>
+                                    <p class="card-text"><small class="text-muted">Data de Publicação: {{ didatico.date }} </small></p>
+                                    <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                      <a target="_blank" href="{{ didatico.read }}" class="text-dark">Ler Online</a>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-warning mb-2">
+                                      <a target="_blank" href="{{ didatico.pdf }}" class="text-dark"> Download</a>
+                                    </button>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoria Drama -->
+            <div class="row" id="list-item-7">
+              <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                  <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Drama : </div>
+                    <div class="card-columns">
+                      <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let drama of generoDrama">
+                          <div class="row no-gutters">
+                              <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                  <img src="{{ drama.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                              </div>
+  
+                              <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                  <div class="card-body">
+                                    <h5 class="card-title h5">{{ drama.title }}</h5>
+                                    <p class="card-text  my-0 ">Autor: {{ drama.author | transformCamelCase }}</p>
+                                    <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ drama.category | transformCamelCase }}. </small></p>
+                                    <p class="card-text"><small class="text-muted">Data de Publicação: {{ drama.date }} </small></p>
+                                    <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                      <a target="_blank" href="{{ drama.read }}" class="text-dark">Ler Online</a>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-warning mb-2">
+                                      <a target="_blank" href="{{ drama.pdf }}" class="text-dark"> Download</a>
+                                    </button>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Categoria Fantasia -->
+          <div class="row" id="list-item-8">
+            <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Fantasia : </div>
+                  <div class="card-columns">
+                    <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let fantasia of generoFantasia">
+                        <div class="row no-gutters">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                <img src="{{ fantasia.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                <div class="card-body">
+                                  <h5 class="card-title h5">{{ fantasia.title }}</h5>
+                                  <p class="card-text  my-0 ">Autor: {{ fantasia.author | transformCamelCase }}</p>
+                                  <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ fantasia.category | transformCamelCase }}. </small></p>
+                                  <p class="card-text"><small class="text-muted">Data de Publicação: {{ fantasia.date }} </small></p>
+                                  <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                    <a target="_blank" href="{{ fantasia.read }}" class="text-dark">Ler Online</a>
+                                  </button>
+                                  <button type="button" class="btn btn-outline-warning mb-2">
+                                    <a target="_blank" href="{{ fantasia.pdf }}" class="text-dark"> Download</a>
+                                  </button>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>           
+          
+        <!-- Categoria Ficação Cientifica -->
+        <div class="row" id="list-item-9">
+            <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Ficção Científica‎ : </div>
+                  <div class="card-columns">
+                    <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let ficcao of generoFiccao">
+                        <div class="row no-gutters">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                <img src="{{ ficcao.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                <div class="card-body">
+                                  <h5 class="card-title h5">{{ ficcao.title }}</h5>
+                                  <p class="card-text  my-0 ">Autor: {{ ficcao.author | transformCamelCase }}</p>
+                                  <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ ficcao.category | transformCamelCase }}. </small></p>
+                                  <p class="card-text"><small class="text-muted">Data de Publicação: {{ ficcao.date }} </small></p>
+                                  <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                    <a target="_blank" href="{{ ficcao.read }}" class="text-dark">Ler Online</a>
+                                  </button>
+                                  <button type="button" class="btn btn-outline-warning mb-2">
+                                    <a target="_blank" href="{{ ficcao.pdf }}" class="text-dark"> Download</a>
+                                  </button>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Categoria Qaudrinhos (HQ) -->
+          <div class="row" id="list-item-10">
+              <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                  <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Quadrinhos (HQ) : </div>
+                    <div class="card-columns">
+                      <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let quadrinhos of generoQuadrinhos">
+                          <div class="row no-gutters">
+                              <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                  <img src="{{ quadrinhos.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                              </div>
+  
+                              <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                  <div class="card-body">
+                                    <h5 class="card-title h5">{{ quadrinhos.title }}</h5>
+                                    <p class="card-text  my-0 ">Autor: {{ quadrinhos.author | transformCamelCase }}</p>
+                                    <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ quadrinhos.category | transformCamelCase }}. </small></p>
+                                    <p class="card-text"><small class="text-muted">Data de Publicação: {{ quadrinhos.date }} </small></p>
+                                    <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                      <a target="_blank" href="{{ quadrinhos.read }}" class="text-dark">Ler Online</a>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-warning mb-2">
+                                      <a target="_blank" href="{{ quadrinhos.pdf }}" class="text-dark"> Download</a>
+                                    </button>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+              <!-- Categoria Religião -->
+                <div class="row" id="list-item-11">
+                    <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                        <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Sátira : </div>
+                          <div class="card-columns">
+                            <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let religiao of generoReligiao">
+                                <div class="row no-gutters">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                        <img src="{{ religiao.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                                    </div>
+        
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                        <div class="card-body">
+                                          <h5 class="card-title h5">{{ religiao.title }}</h5>
+                                          <p class="card-text  my-0 ">Autor: {{ religiao.author | transformCamelCase }}</p>
+                                          <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ religiao.category | transformCamelCase }}. </small></p>
+                                          <p class="card-text"><small class="text-muted">Data de Publicação: {{ religiao.date }} </small></p>
+                                          <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                            <a target="_blank" href="{{ religiao.read }}" class="text-dark">Ler Online</a>
+                                          </button>
+                                          <button type="button" class="btn btn-outline-warning mb-2">
+                                            <a target="_blank" href="{{ religiao.pdf }}" class="text-dark"> Download</a>
+                                          </button>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Categoria Romance -->
+                  <div class="row" id="list-item-12">
+                      <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                          <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Sobrenatural : </div>
+                            <div class="card-columns">
+                              <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let romance of generoRomance">
+                                  <div class="row no-gutters">
+                                      <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                          <img src="{{ romance.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                                      </div>
+          
+                                      <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                          <div class="card-body">
+                                            <h5 class="card-title h5">{{ romance.title }}</h5>
+                                            <p class="card-text  my-0 ">Autor: {{ romance.author | transformCamelCase }}</p>
+                                            <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ romance.category | transformCamelCase }}. </small></p>
+                                            <p class="card-text"><small class="text-muted">Data de Publicação: {{ romance.date }} </small></p>
+                                            <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                              <a target="_blank" href="{{ romance.read }}" class="text-dark">Ler Online</a>
+                                            </button>
+                                            <button type="button" class="btn btn-outline-warning mb-2">
+                                              <a target="_blank" href="{{ romance.pdf }}" class="text-dark"> Download</a>
+                                            </button>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoria Sátira -->
+                    <div class="row" id="list-item-13">
+                      <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                          <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Religião : </div>
+                            <div class="card-columns">
+                              <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let satira of generoSatira">
+                                  <div class="row no-gutters">
+                                      <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                          <img src="{{ satira.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                                      </div>
+          
+                                      <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                          <div class="card-body">
+                                            <h5 class="card-title h5">{{ satira.title }}</h5>
+                                            <p class="card-text  my-0 ">Autor: {{ satira.author | transformCamelCase }}</p>
+                                            <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ satira.category | transformCamelCase }}. </small></p>
+                                            <p class="card-text"><small class="text-muted">Data de Publicação: {{ satira.date }} </small></p>
+                                            <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                              <a target="_blank" href="{{ satira.read }}" class="text-dark">Ler Online</a>
+                                            </button>
+                                            <button type="button" class="btn btn-outline-warning mb-2">
+                                              <a target="_blank" href="{{ satira.pdf }}" class="text-dark"> Download</a>
+                                            </button>
+                                          </div>
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoria Sobrenatural -->
+                    <div class="row" id="list-item-14">
+                        <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                            <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Romance : </div>
+                              <div class="card-columns">
+                                <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let sobrenatural of generoSobrenatural">
+                                    <div class="row no-gutters">
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                            <img src="{{ sobrenatural.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                                        </div>
+            
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                            <div class="card-body">
+                                              <h5 class="card-title h5">{{ sobrenatural.title }}</h5>
+                                              <p class="card-text  my-0 ">Autor: {{ sobrenatural.author | transformCamelCase }}</p>
+                                              <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ sobrenatural.category | transformCamelCase }}. </small></p>
+                                              <p class="card-text"><small class="text-muted">Data de Publicação: {{ sobrenatural.date }} </small></p>
+                                              <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                                <a target="_blank" href="{{ sobrenatural.read }}" class="text-dark">Ler Online</a>
+                                              </button>
+                                              <button type="button" class="btn btn-outline-warning mb-2">
+                                                <a target="_blank" href="{{ sobrenatural.pdf }}" class="text-dark"> Download</a>
+                                              </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                    <!-- Categoria Terror -->
+                    <div class="row" id="list-item-15">
+                        <div class="col-12 col-lg-12 col-xl-12 justisfy-content-center">
+                            <div class="p-3 mb-2 bg-warning text-dark text-center h5 mt-5">Terror : </div>
+                              <div class="card-columns">
+                                <div class="card mb-3 my-3 justisfy-content-center w-100" style="max-width: 460px;" *ngFor="let terror of generoTerror">
+                                    <div class="row no-gutters">
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                            <img src="{{ terror.img }}" class="img-fluid d-block" alt="..." style="width: 360px; height: 550;">
+                                        </div>
+            
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                            <div class="card-body">
+                                              <h5 class="card-title h5">{{ terror.title }}</h5>
+                                              <p class="card-text  my-0 ">Autor: {{ terror.author | transformCamelCase }}</p>
+                                              <p class="card-text p-0 pt-0 my-1"><small class="text-info">Gênero: {{ terror.category | transformCamelCase }}. </small></p>
+                                              <p class="card-text"><small class="text-muted">Data de Publicação: {{ terror.date }} </small></p>
+                                              <button type="button" class="btn btn-outline-success mr-2 mb-2">
+                                                <a target="_blank" href="{{ terror.read }}" class="text-dark">Ler Online</a>
+                                              </button>
+                                              <button type="button" class="btn btn-outline-warning mb-2">
+                                                <a target="_blank" href="{{ terror.pdf }}" class="text-dark"> Download</a>
+                                              </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div> 
+                
+    </div>
+</div>
+</div>
+</div>
+

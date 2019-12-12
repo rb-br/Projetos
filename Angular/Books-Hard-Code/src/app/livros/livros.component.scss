@@ -1,0 +1,23 @@
+.scrollspy-example {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 800px;
+}
+
+a{
+    list-style-type: none;
+    text-decoration:none;
+}
+
+#list-example a:hover {
+    background-color: orange;
+    color: black;
+    
+}
+
+.card-columns {
+    column-count: 2;
+}
+
+
